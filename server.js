@@ -142,9 +142,9 @@ app.get("/", async (req, res) => {
         }
     </style>
 </head>
-<body class="terminal">
+<body>
     <div class="container">
-        ${htmlContent}
+    ${htmlContent}
     </div>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9P4KP1YMH6"></script>
