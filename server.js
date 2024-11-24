@@ -24,8 +24,7 @@ app.get("/", async (req, res) => {
     const htmlContent = marked(response.data);
 
     // Send the HTML content as the response
-    res.send(`
-     <!DOCTYPE html>
+    res.send(`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -100,48 +99,113 @@ app.get("/", async (req, res) => {
   <meta name="contributes-to" content="https://github.com/rkooyenga">
   <link rel="author" content="ray@raykooyenga.com" href="https://raykooyenga.com">
 
-    <style>
-        body {
-            background-color: #f9f8f6; /* Off-white background */
-            color: #333333; /* Ink-like text color */
-            font-family: monospace;
+ <style>
+   @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    /* Global Styles */
+    body {
+        font-family: 'Courier Prime', monospace;
+        background-color: #f9f8f6; /* Off-white background */
+        color: #333; /* Ink-like text color */
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+   
+h2, h3 {
+        font-family: 'Inter', monospace;
+        color: #222; /* Slightly darker for headings */
+        margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family:IBM Plex Mono;
+        font-size: 2.5rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    p, li {
+       font-family:IBM Plex Mono;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Layout */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .header p {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .section h2 {
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    .contact-info p {
+        margin: 10px 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
         }
 
-        h1, h2, h3 {
-            font-family: 'Courier New', monospace;
+        h2 {
+            font-size: 1.5rem;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
         }
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section h2 {
-            margin-bottom: 15px;
-        }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .contact-info {
-            margin-top: 20px;
-        }
-    </style>
-</head>
+</style>
+  </head>
 <body>
     <div class="container">
     ${htmlContent}
